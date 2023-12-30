@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 import paramiko
+import os
 
 class SSHButtonApp(App):
     def build(self):
@@ -17,7 +18,7 @@ class SSHButtonApp(App):
                 ssh_host = '10.0.0.5'
                 ssh_port = 22
                 ssh_username = 'dietpi'
-                ssh_password = '82653333'
+                ssh_password = os.environ['ssh_password']
 
                 # Create SSH client
                 ssh_client = paramiko.SSHClient()
